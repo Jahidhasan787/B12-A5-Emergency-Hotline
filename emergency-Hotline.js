@@ -77,6 +77,7 @@ document.getElementById('clear-history-btn').addEventListener('click',function()
 function getCopyCountWithId(Id, numberId){  
         document.getElementById(Id).addEventListener('click', function () {
             const alertNumber =document.getElementById(numberId).innerText;
+            navigator.clipboard.writeText(alertNumber)
             alert('The number has been copied: ' + alertNumber);
             let count = 1; 
             const heartCount = document.getElementById('copy-count');

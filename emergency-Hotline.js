@@ -65,10 +65,34 @@ callBtnId('call-btn-9', 'service-name-9', 'number-9');
 
 
 document.getElementById('clear-history-btn').addEventListener('click',function(){
-       const historySection = document.getElementsByClassName('history')
+       const historySection = document.getElementsByClassName('history');
        for(const history of historySection){
-        history.style.display = 'none'
+        history.style.display = 'none';
        }
         
 })
+
+
+
+function getCopyCountWithId(Id, numberId){  
+        document.getElementById(Id).addEventListener('click', function () {
+            const alertNumber =document.getElementById(numberId).innerText;
+            alert('The number has been copied: ' + alertNumber);
+            let count = 1; 
+            const heartCount = document.getElementById('copy-count');
+            const heartCountValue = parseInt (document.getElementById('copy-count').innerText);
+            const newHeartCount = heartCountValue + count;
+            heartCount.innerText = newHeartCount;
+          })    
+}
+
+getCopyCountWithId('copy-btn-1','number-1');
+getCopyCountWithId('copy-btn-2','number-2');
+getCopyCountWithId('copy-btn-3','number-3');
+getCopyCountWithId('copy-btn-4','number-4');
+getCopyCountWithId('copy-btn-5','number-5');
+getCopyCountWithId('copy-btn-6','number-6');
+getCopyCountWithId('copy-btn-7','number-7');
+getCopyCountWithId('copy-btn-8','number-8');
+getCopyCountWithId('copy-btn-9','number-9');
 

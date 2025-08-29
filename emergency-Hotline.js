@@ -1,10 +1,13 @@
-function getHeartWithId(heartId){  
-        document.getElementById(heartId).addEventListener('click', function () {
-            let count = 1; 
-            const heartCount = document.getElementById('heart-count');
-            const heartCountValue = parseInt (document.getElementById('heart-count').innerText);
+function getWithId(id){
+       let count = 1; 
+            const heartCount = document.getElementById(id);
+            const heartCountValue = parseInt (document.getElementById(id).innerText);
             const newHeartCount = heartCountValue + count;
             heartCount.innerText = newHeartCount;
+}
+function getHeartWithId(heartId){  
+        document.getElementById(heartId).addEventListener('click', function () {
+           getWithId('heart-count');
           })    
 }
 
@@ -34,7 +37,7 @@ function callBtnId(callBtnId, serviceId,numberId){
             const time = now.toLocaleTimeString([],{hour12:false});
             const parentHistory =document.getElementById('history-section');
             const newDiv = document.createElement('div');
-            newDiv.classList.add('history', 'flex','justify-between','items-center','py-2','gap-4');
+            newDiv.classList.add('history', 'flex','justify-between','items-center','p-2','my-2' ,'gap-4','bg-gray-100','rounded-xl');
             const newPTag1 = document.createElement('p');
             newPTag1.classList.add('text-sm');
             const newPTag2 = document.createElement('p');
@@ -79,11 +82,7 @@ function getCopyCountWithId(Id, numberId){
             const alertNumber =document.getElementById(numberId).innerText;
             navigator.clipboard.writeText(alertNumber)
             alert('The number has been copied: ' + alertNumber);
-            let count = 1; 
-            const heartCount = document.getElementById('copy-count');
-            const heartCountValue = parseInt (document.getElementById('copy-count').innerText);
-            const newHeartCount = heartCountValue + count;
-            heartCount.innerText = newHeartCount;
+            getWithId('copy-count');
           })    
 }
 
